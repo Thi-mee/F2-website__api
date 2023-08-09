@@ -29,13 +29,13 @@ class Mailer {
             },
             transport: this.transporter,
             send: true,
-            preview: {
-                open: {
-                    app: 'firefox',
-                    wait: false,
-                },
+            // preview: {
+            //     open: {
+            //         app: 'firefox',
+            //         wait: false,
+            //     },
                 
-            },
+            // },
             juiceResources: {
                 preserveImportant: true,
                 webResources: {
