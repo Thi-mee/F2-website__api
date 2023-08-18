@@ -10,7 +10,7 @@ const mailer = new Mailer(
 
 
 const sendFeedback = async (req, res, next) => {
-    const baseUrl = process.env.CLIENT_URL ?? ""
+    const baseUrl = req.baseURL;
     try {
         const {fullName, email, message} = req.body
         await mailer.sendEmail(
@@ -18,7 +18,7 @@ const sendFeedback = async (req, res, next) => {
             { fullName, email, message, baseUrl },
             process.env.CONTACT_EMAIL
         );
-        res.status("200").json({
+        res.status(200).json({
             status: true,
             message: "Feedback sent successfully"
         })
