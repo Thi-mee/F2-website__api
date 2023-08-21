@@ -10,48 +10,57 @@ const mailer = new Mailer(
 
 exports.sendF2SeedBuildApplication = async (req, res, next) => {
   try {
+    req.body.website = req.body.website ? req.body.website : "";
+    req.body.others = req.body.others ? req.body.others : "";
+    req.body.reference = req.body.reference ? req.body.reference : "";
     await mailer.sendEmail(
-      'f2seedBuildApplication',
+      "f2seedBuildApplication",
       req.body,
       process.env.CONTACT_EMAIL
     );
     res.status(200).json({
       status: true,
-      message: "Application sent successfully"
-    })
+      message: "Application sent successfully",
+    });
   } catch (e) {
-    next(e)
+    next(e);
   }
-}
+};
 
 exports.sendF2SeedScaleApplication = async (req, res, next) => {
   try {
+    req.body.website = req.body.website ? req.body.website : "";
+    req.body.others = req.body.others ? req.body.others : "";
+    req.body.reference = req.body.reference ? req.body.reference : "";
     await mailer.sendEmail(
-      'f2seedScaleApplication',
+      "f2seedScaleApplication",
       req.body,
       process.env.CONTACT_EMAIL
     );
     res.status(200).json({
       status: true,
-      message: "Application sent successfully"
-    })
+      message: "Application sent successfully",
+    });
   } catch (e) {
-    next(e)
+    next(e);
   }
-}
+};
 
 exports.sendF2SeedFundApplication = async (req, res, next) => {
   try {
+    req.body.website = req.body.website ? req.body.website : "";
+    req.body.others = req.body.others ? req.body.others : "";
+    req.body.reference = req.body.reference ? req.body.reference : "";
     await mailer.sendEmail(
-      'f2seedFundApplication',
+      "f2seedFundApplication",
       req.body,
       process.env.CONTACT_EMAIL
     );
     res.status(200).json({
       status: true,
-      message: "Application sent successfully"
-    })
+      message: "Application sent successfully",
+    });
   } catch (e) {
-    next(e)
+    next(e);
   }
-}
+};
